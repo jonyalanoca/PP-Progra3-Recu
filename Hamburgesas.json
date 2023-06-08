@@ -1,20 +1,20 @@
 [
     {
-        "id": 932,
-        "nombre": "bigMac",
-        "precio": 1000,
-        "tipo": "doble",
-        "aderezo": "mayonesa",
-        "cantidad": 20,
-        "imagen": "ImagenesDeHamburguesas\/2023\/doblebigMac.jpg"
-    },
-    {
-        "id": 482,
+        "id": 279,
         "nombre": "macNifica",
         "precio": 3000,
         "tipo": "doble",
         "aderezo": "mayonesa",
-        "cantidad": 19,
+        "cantidad": 14,
         "imagen": "ImagenesDeHamburguesas\/2023\/doblemacNifica.jpeg"
+    },
+    {
+        "id": 383,
+        "nombre": "bigMac",
+        "precio": 3000,
+        "tipo": "simple",
+        "aderezo": "mayonesa",
+        "cantidad": 46,
+        "imagen": "ImagenesDeHamburguesas\/2023\/simplebigMac.jpg"
     }
 ]

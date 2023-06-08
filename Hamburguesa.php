@@ -143,7 +143,16 @@
                 }
             }
         }
-        //Metodos Venta Hamburguesa
-        
+        //consultas
+        public static function obtenerHamburguesaPorID($arrayHamb,$id){
+            $encontrada=null;
+            foreach($arrayHamb as $ham){
+                if($ham->id==$id){
+                    $encontrada=$ham;
+                    break;
+                }
+            }
+            return $encontrada;
+        }
     }
 ?>

@@ -16,7 +16,7 @@
 					"formdata": [
 						{
 							"key": "nombre",
-							"value": "macNifica",
+							"value": "bigMac",
 							"type": "text"
 						},
 						{
@@ -26,7 +26,7 @@
 						},
 						{
 							"key": "tipo",
-							"value": "doble",
+							"value": "simple",
 							"type": "text"
 						},
 						{
@@ -36,13 +36,13 @@
 						},
 						{
 							"key": "cantidad",
-							"value": "20",
+							"value": "50",
 							"type": "text"
 						},
 						{
 							"key": "imagen",
 							"type": "file",
-							"src": "/C:/Users/Jonathan/Desktop/mcnifica.jpeg"
+							"src": "/C:/Users/Jonathan/Desktop/bg.jpg"
 						}
 					]
 				},
@@ -104,17 +104,17 @@
 					"formdata": [
 						{
 							"key": "email",
-							"value": "jonyalanoca@2gmail.com",
+							"value": "jonyalanoca@gmail.com",
 							"type": "text"
 						},
 						{
 							"key": "nombre",
-							"value": "macNifica",
+							"value": "bigMac",
 							"type": "text"
 						},
 						{
 							"key": "tipo",
-							"value": "doble",
+							"value": "simple",
 							"type": "text"
 						},
 						{
@@ -128,6 +128,80 @@
 							"type": "text"
 						}
 					]
+				},
+				"url": {
+					"raw": "http://localhost/1erParcialProgra3/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"1erParcialProgra3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consultaVentas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/1erParcialProgra3/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"1erParcialProgra3",
+						""
+					],
+					"query": [
+						{
+							"key": "aderezo",
+							"value": "mostaza",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "opera2@gmail.com",
+							"disabled": true
+						},
+						{
+							"key": "tipo",
+							"value": "doble",
+							"disabled": true
+						},
+						{
+							"key": "fecha1",
+							"value": "2023-06-08",
+							"disabled": true
+						},
+						{
+							"key": "fecha2",
+							"value": "2023-06-09",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ModificarVenta",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numeroPedido\":2433,\r\n    \"email\":\"jony@gmail.com\",\r\n    \"nombre\":\"bigMac\",\r\n    \"tipo\":\"simple\",\r\n    \"aderezo\":\"mayonesa\",\r\n    \"cantidad\":3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
 					"raw": "http://localhost/1erParcialProgra3/",

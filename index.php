@@ -2,7 +2,7 @@
 
     switch($_SERVER["REQUEST_METHOD"]){
         case "GET":
-            echo "estoy en get";
+            include_once "ConsultasVentas.php";
             break;
         case "POST":
             if(isset($_POST["nombre"]) && isset($_POST["precio"]) && isset($_POST["tipo"]) && isset($_POST["aderezo"]) && isset($_POST["cantidad"]) && isset($_FILES["imagen"])){
@@ -12,7 +12,9 @@
             }elseif(isset($_POST["nombre"]) && isset($_POST["tipo"])){
                 include_once "HamburguesaConsulta.php";
             }
-            
+            break;
+        case "PUT":
+            include_once "ModificarVenta.php";
             break;
     }
 ?>  
