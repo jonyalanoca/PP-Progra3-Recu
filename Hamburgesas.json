@@ -1,0 +1,20 @@
+[
+    {
+        "id": 932,
+        "nombre": "bigMac",
+        "precio": 1000,
+        "tipo": "doble",
+        "aderezo": "mayonesa",
+        "cantidad": 20,
+        "imagen": "ImagenesDeHamburguesas\/2023\/doblebigMac.jpg"
+    },
+    {
+        "id": 482,
+        "nombre": "macNifica",
+        "precio": 3000,
+        "tipo": "doble",
+        "aderezo": "mayonesa",
+        "cantidad": 19,
+        "imagen": "ImagenesDeHamburguesas\/2023\/doblemacNifica.jpeg"
+    }
+]

@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "de2b6775-72b6-450e-b5b5-0c35af76523a",
+		"name": "1erParcialProgra3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21191803"
+	},
+	"item": [
+		{
+			"name": "CargaHamburgesa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "macNifica",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "3000",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "doble",
+							"type": "text"
+						},
+						{
+							"key": "aderezo",
+							"value": "mayonesa",
+							"type": "text"
+						},
+						{
+							"key": "cantidad",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "imagen",
+							"type": "file",
+							"src": "/C:/Users/Jonathan/Desktop/mcnifica.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/1erParcialProgra3/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"1erParcialProgra3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConsultaHamburguesa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "bigMac",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "doble",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/1erParcialProgra3/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"1erParcialProgra3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "altaVenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "jonyalanoca@2gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "nombre",
+							"value": "macNifica",
+							"type": "text"
+						},
+						{
+							"key": "tipo",
+							"value": "doble",
+							"type": "text"
+						},
+						{
+							"key": "aderezo",
+							"value": "mayonesa",
+							"type": "text"
+						},
+						{
+							"key": "cantidad",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/1erParcialProgra3/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"1erParcialProgra3",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
