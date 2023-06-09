@@ -216,6 +216,73 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "BorrarVenta",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numeroPedido\":2565\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/1erParcialProgra3/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"1erParcialProgra3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DevolucionHamburguesa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "numeroPedido",
+							"value": "2433",
+							"type": "text"
+						},
+						{
+							"key": "causa",
+							"value": "fria",
+							"type": "text"
+						},
+						{
+							"key": "foto",
+							"type": "file",
+							"src": "/C:/Users/Jonathan/Desktop/tano.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/1erParcialProgra3/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"1erParcialProgra3",
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

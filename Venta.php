@@ -89,6 +89,7 @@
             copy($imagen,$imagenDestino);
             return $imagenDestino;
          }
+         
          public static function GuardarArchivo($nombreArchivo,$arrayObjetos){
             $archivo=fopen($nombreArchivo,"w");
             $cadena=json_encode($arrayObjetos,JSON_PRETTY_PRINT);
@@ -106,7 +107,27 @@
             }
             return $encontrada;
         }
-        
-        
+        //borrar
+        public static function EncontrarIndexVentaPorId($arrayVentas, $id){
+            $encontrada=-1;
+            for($i=0;$i<count($arrayVentas);$i++){
+                if($arrayVentas[$i]->numeroPedido==$id){
+                    $encontrada=$i;
+                    break;
+                }
+            }
+            return $encontrada;
+        }
+        public static function MoverArchivoDeRuta($imagen,$rutaNueva){
+            
+            if(!file_exists($rutaNueva)){
+                mkdir($rutaNueva, 0777, true);
+            }
+            $nombreArchivo=basename($imagen);
+            $imagenDestino=$rutaNueva."/".$nombreArchivo;
+    
+            copy($imagen,$imagenDestino);
+            return $imagenDestino;
+        }
     }
 ?>

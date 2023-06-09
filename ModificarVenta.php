@@ -41,6 +41,7 @@
 
                 Venta::GuardarArchivo($nombreArchivoVenta,$arrayVentas);
                 Hamburguesa::GuardarArchivo($nombreArchivoHambur,$arrayHambur);
+                echo "Se aplicaron los cambios existosamente";
 
             }else{
                 echo "La hamburguesa nueva no tiene el stock suficiente.";

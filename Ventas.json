@@ -14,13 +14,5 @@
         "fecha": "2023-06-08",
         "cantidad": 1,
         "imagen": "ImagenesDeLaVenta\/2023\/doblemacNificaopera22023-06-08.jpeg"
-    },
-    {
-        "numeroPedido": 2565,
-        "emailUsuario": "jonyalanoca@gmail.com",
-        "idHamburguesa": 383,
-        "fecha": "2023-06-08",
-        "cantidad": 1,
-        "imagen": "ImagenesDeLaVenta\/2023\/simplebigMacjonyalanoca2023-06-08.jpg"
     }
 ]
