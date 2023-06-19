@@ -1,8 +1,11 @@
 <?php
-
     switch($_SERVER["REQUEST_METHOD"]){
         case "GET":
-            include_once "ConsultasVentas.php";
+            if(isset($_GET["informeDevoluciones"])){
+                include_once "ConsultasDevoluciones.php";
+            }else{
+                include_once "ConsultasVentas.php";
+            }
             break;
         case "POST":
             if(isset($_POST["nombre"]) && isset($_POST["precio"]) && isset($_POST["tipo"]) && isset($_POST["aderezo"]) && isset($_POST["cantidad"]) && isset($_FILES["imagen"])){
@@ -21,5 +24,10 @@
         case "DELETE":
             include_once "BorrarVenta.php";
             break;
+        default: 
+            http_response_code(404);
+            echo " Error 404a";
+            break;
     }
-?>  
+            
+?>

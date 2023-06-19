@@ -6,12 +6,16 @@
         public $fecha;
         public $cantidad;
         public $imagen;
-        public function __construct($numeroPedido,$emailUsuario,$idHamburguesa,$fecha,$cantidad,$imagen){
+        public $idCupon;
+        public $total;
+        public function __construct($numeroPedido,$emailUsuario,$idHamburguesa,$fecha,$cantidad,$imagen,$idCupon=null,$total){
             $this->setNumeroPedido($numeroPedido);
             $this->setEmailUsuario($emailUsuario);
             $this->setIdHamburguesa($idHamburguesa);
             $this->setFecha($fecha);
             $this->setCantidad($cantidad);
+            $this->setIdCupon($idCupon);
+            $this->setTotal($total);
             $this->imagen=$imagen;
         }
         public function setNumeroPedido($numeroPedido){
@@ -49,6 +53,20 @@
                 throw new Exception("La cantidad no es un numero");
             }
         }
+        public function setIdCupon($idCupon){
+            if(is_numeric($idCupon)){
+                $this->idCupon=intval($idCupon);
+            }else{
+                throw new Exception("El id del cupon no es un numero");
+            }
+        }
+        public function setTotal($total){
+            if(is_numeric($total)){
+                $this->total=floatval($total);
+            }else{
+                throw new Exception("El total no es un numero");
+            }
+        }
 
         //Metodos Alta
         public static function LeerArchivo($nombreArchivo){
@@ -66,13 +84,13 @@
         public static function ArrayToObjectArrays($arrayDecodificado){
             $listaObjetos=array();
             foreach($arrayDecodificado as $elemento){
-                array_push($listaObjetos,new Venta($elemento["numeroPedido"],$elemento["emailUsuario"],$elemento["idHamburguesa"],$elemento["fecha"],$elemento["cantidad"],$elemento["imagen"]));
+                array_push($listaObjetos,new Venta($elemento["numeroPedido"],$elemento["emailUsuario"],$elemento["idHamburguesa"],$elemento["fecha"],$elemento["cantidad"],$elemento["imagen"],$elemento["idCupon"], $elemento["total"]));
             }
             return $listaObjetos;
         }
 
-         public static function AltaVenta(&$arrayVentas,$email,$idHamburguesa,$cantidad, $imagen){
-            $venta=new Venta(rand(2001,3000),$email,$idHamburguesa,date("Y-m-d"),$cantidad,$imagen);
+         public static function AltaVenta(&$arrayVentas,$email,$idHamburguesa,$cantidad, $imagen, $idCupon, $totalVenta){
+            $venta=new Venta(rand(2001,3000),$email,$idHamburguesa,date("Y-m-d"),$cantidad,$imagen, $idCupon, $totalVenta);
             array_push($arrayVentas,$venta);
             echo "Se guardo la venta con exito";
          }
@@ -128,6 +146,13 @@
     
             copy($imagen,$imagenDestino);
             return $imagenDestino;
+        }
+        public static function ObtenerTotal($cupon,$objetoEncontrado,$cantidad){
+            $total=$cantidad*$objetoEncontrado->precio;
+            if($cupon!=null){
+                $total=$total-($total*$cupon->descuento);
+            }
+            return $total;
         }
     }
 ?>

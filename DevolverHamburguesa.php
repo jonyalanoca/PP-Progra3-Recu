@@ -25,14 +25,21 @@
             $decodificado3=Cupon::LeerArchivo($nombreArchivoCupon);
             $arrayCupones=Cupon::ArrayToObjectArrays($decodificado3);
 
-            $imagenUrl=Devolucion::GuardarImagen($foto);
-            $idDeDevolucion=Devolucion::AddDevolucion($arrayDevoluciones,$causa,$numeroPedido,$imagenUrl);
-            Devolucion::GuardarArchivo($nombreArchivoDevolucion,$arrayDevoluciones);
-            echo "Se guardo la devolución con exito\n";
-            $fechaVencimiento=Cupon::EstablecerFechaDeVenciento(3);
-            Cupon::AddCupon($arrayCupones,$idDeDevolucion,$fechaVencimiento,true,0.10);
-            Cupon::GuardarArchivo($nombreArchivoCupon,$arrayCupones);
-            echo "Se guardo el cupon con exito\n";
+            if(Venta::EncontrarVentaPorId($arrayVentas, $numeroPedido)==true){
+                $imagenUrl=Devolucion::GuardarImagen($foto);
+                $idDeDevolucion=Devolucion::AddDevolucion($arrayDevoluciones,$causa,$numeroPedido,$imagenUrl);
+                Devolucion::GuardarArchivo($nombreArchivoDevolucion,$arrayDevoluciones);
+                echo "Se guardo la devolución con exito\n";
+                $fechaVencimiento=Cupon::EstablecerFechaDeVenciento(3);
+                Cupon::AddCupon($arrayCupones,$idDeDevolucion,$fechaVencimiento,true,0.10);
+                Cupon::GuardarArchivo($nombreArchivoCupon,$arrayCupones);
+                echo "Se guardo el cupon con exito\n";
+            }else{
+                echo "No se econtro el numero de pedido. No se realizó ninguna acción\n";
+            }
+            
+        }else{
+            echo "Revise los datos enviados\n";
         }
 
     }

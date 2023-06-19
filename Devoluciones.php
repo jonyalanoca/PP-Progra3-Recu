@@ -65,5 +65,14 @@
             fwrite($archivo,$cadena);
             fclose($archivo);
         }
+        public static function ObtenerDevolucionPorId($arrayDevoluciones,$id){
+            $devolucionEncontrada=null;
+            foreach($arrayDevoluciones as $devolucion){
+                if($devolucion->id==$id){
+                    $devolucionEncontrada=$devolucion;
+                }
+            }
+            return $devolucionEncontrada;
+        }
     }
 ?>  

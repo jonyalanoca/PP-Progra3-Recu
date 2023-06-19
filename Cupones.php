@@ -14,7 +14,7 @@
             $this->setDescuento($descuento);
         }
         public function setId($id){
-            if(is_numeric($id)){
+            if(is_numeric($id) ){
                 $this->id=intval($id);
             }else{
                 throw new Exception("El id no es un numero");
@@ -82,6 +82,34 @@
             $cadena=json_encode($arrayObjetos,JSON_PRETTY_PRINT);
             fwrite($archivo,$cadena);
             fclose($archivo);
+        }
+        public static function ObtenerCuporPorId($arrayCupones, $id){
+            $objetoEncontrado=null;
+            foreach($arrayCupones as $cupon){
+                if($cupon->id==$id){
+                    $objetoEncontrado=$cupon;
+                    break;
+                }
+            }
+            return $objetoEncontrado;
+        }
+        public static function ValidarCupon($cupon)
+        {
+            if($cupon==null){
+                echo "No se encontro el cupon. No se aplico el descuento\n";
+                return false;
+            }
+            if($cupon->activo==false){
+                echo "El cupon no esta habilitado. No se aplico el descuento\n";
+                return false;
+            }
+            $vencimiento=new DateTime($cupon->fechaVencimiento);
+            $hoy=new DateTime(date("Y-m-d"));
+            if($vencimiento<$hoy){
+                echo "El cupon esta vencido. No se aplico el descuento\n";
+                return false;
+            }
+            return true;
         }
     }
 ?>  

@@ -42,7 +42,7 @@
 						{
 							"key": "imagen",
 							"type": "file",
-							"src": "/C:/Users/Jonathan/Desktop/bg.jpg"
+							"src": "/C:/Users/Jonathan/Downloads/bg.jpg"
 						}
 					]
 				},
@@ -75,7 +75,7 @@
 						},
 						{
 							"key": "tipo",
-							"value": "doble",
+							"value": "simple",
 							"type": "text"
 						}
 					]
@@ -126,6 +126,11 @@
 							"key": "cantidad",
 							"value": "1",
 							"type": "text"
+						},
+						{
+							"key": "idCupon",
+							"value": "5484",
+							"type": "text"
 						}
 					]
 				},
@@ -149,29 +154,27 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost/1erParcialProgra3/",
+					"raw": "http://localhost/1erParcialProgra3?aderezo=mayonesa",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"path": [
-						"1erParcialProgra3",
-						""
+						"1erParcialProgra3"
 					],
 					"query": [
 						{
 							"key": "aderezo",
-							"value": "mostaza",
-							"disabled": true
+							"value": "mayonesa"
 						},
 						{
 							"key": "email",
-							"value": "opera2@gmail.com",
+							"value": "jonyalanoca@gmail.com",
 							"disabled": true
 						},
 						{
 							"key": "tipo",
-							"value": "doble",
+							"value": "simple",
 							"disabled": true
 						},
 						{
@@ -196,7 +199,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"numeroPedido\":2433,\r\n    \"email\":\"jony@gmail.com\",\r\n    \"nombre\":\"bigMac\",\r\n    \"tipo\":\"simple\",\r\n    \"aderezo\":\"mayonesa\",\r\n    \"cantidad\":3\r\n}",
+					"raw": "{\r\n    \"numeroPedido\":2151,\r\n    \"email\":\"jony@gmail.com\",\r\n    \"nombre\":\"bigMac\",\r\n    \"tipo\":\"simple\",\r\n    \"aderezo\":\"mayonesa\",\r\n    \"cantidad\":3\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -224,7 +227,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"numeroPedido\":2565\r\n}",
+					"raw": "{\r\n    \"numeroPedido\":2752\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -255,7 +258,7 @@
 					"formdata": [
 						{
 							"key": "numeroPedido",
-							"value": "2433",
+							"value": "2950",
 							"type": "text"
 						},
 						{
@@ -266,7 +269,7 @@
 						{
 							"key": "foto",
 							"type": "file",
-							"src": "/C:/Users/Jonathan/Desktop/tano.jpeg"
+							"src": "/C:/Users/Jonathan/Downloads/tano.jpeg"
 						}
 					]
 				},
@@ -279,6 +282,30 @@
 					"path": [
 						"1erParcialProgra3",
 						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConsultasDevoluciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/1erParcialProgra3?informeDevoluciones=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"1erParcialProgra3"
+					],
+					"query": [
+						{
+							"key": "informeDevoluciones",
+							"value": "true"
+						}
 					]
 				}
 			},
